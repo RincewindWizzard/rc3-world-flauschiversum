@@ -1,0 +1,21 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "map.lastUsedExportFilter": "JSON-Kartendateien (*.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "openFiles": [
+    ],
+    "project": "rc3-world-flauschiversum.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
