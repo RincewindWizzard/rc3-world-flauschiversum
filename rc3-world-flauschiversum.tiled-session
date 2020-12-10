@@ -7,15 +7,29 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "main.json": {
+            "scale": 0.9163541666666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 464.340115948619,
+                "y": 480.1636921677845
+            }
+        },
+        "main.json#cija": {
+            "scaleInDock": 1
+        }
     },
-    "map.lastUsedExportFilter": "JSON-Kartendateien (*.json)",
-    "map.lastUsedFormat": "tmx",
-    "map.layerDataFormat": null,
+    "map.height": 30,
+    "map.lastUsedFormat": "json",
+    "map.width": 30,
     "openFiles": [
     ],
     "project": "rc3-world-flauschiversum.tiled-project",
-    "property.type": "bool",
     "recentFiles": [
+        "main.json"
     ],
-    "tileset.lastUsedFormat": "tsx"
+    "tileset.lastUsedFormat": "json"
 }
