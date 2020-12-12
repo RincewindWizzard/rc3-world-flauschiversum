@@ -15,6 +15,20 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "forest/forest.json": {
+            "scale": 0.75,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 1770,
+                "y": 819.9999999999999
+            }
+        },
+        "forest/forest.json#fantasy": {
+            "scaleInDock": 2
+        },
+        "forest/forest.json#mapUtilities": {
+            "scaleInDock": 1
+        },
         "magierdinge/magierdinge.json": {
             "scale": 1,
             "selectedLayer": -1,
@@ -51,6 +65,7 @@
     "project": "rc3-world-flauschiversum.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "forest/forest.json",
         "magierdinge/magierdinge.json",
         "main.json",
         "cija.json"
