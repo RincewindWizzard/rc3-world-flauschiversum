@@ -3,33 +3,73 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "magierdinge/magierdinge.json",
     "expandedProjectPaths": [
     ],
     "fileStates": {
         "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "cija.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "forest/forest.json": {
+            "scale": 2,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 399,
+                "y": 338
+            }
+        },
+        "forest/forest.json#fantasy": {
+            "scaleInDock": 2
+        },
+        "forest/forest.json#mapUtilities": {
+            "scaleInDock": 1
+        },
+        "magierdinge/magierdinge.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1012,
+                "y": 971
+            }
+        },
+        "magierdinge/magierdinge.json#fantasy": {
+            "scaleInDock": 2
+        },
+        "magierdinge/magierdinge.json#mapUtilities": {
             "scaleInDock": 1
         },
         "main.json": {
             "scale": 0.9163541666666667,
-            "selectedLayer": 0,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 464.340115948619,
-                "y": 480.1636921677845
+                "x": 465.431397067182,
+                "y": 481.25497328634765
             }
         },
         "main.json#cija": {
             "scaleInDock": 1
         }
     },
+    "map.fixedSize": false,
     "map.height": 30,
     "map.lastUsedFormat": "json",
     "map.width": 30,
     "openFiles": [
+        "magierdinge/magierdinge.json"
     ],
     "project": "rc3-world-flauschiversum.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
-        "main.json"
+        "forest/forest.json",
+        "magierdinge/magierdinge.json",
+        "main.json",
+        "cija.json"
     ],
+    "tileset.embedInMap": true,
     "tileset.lastUsedFormat": "json"
 }
