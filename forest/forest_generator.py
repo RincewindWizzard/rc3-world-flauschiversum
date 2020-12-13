@@ -65,12 +65,21 @@ class Tile(object):
     def __repr__(self):
         return "Tile({})".format(self.name if self.name else self.id)
 
+
+
 TILE_EMPTY = Tile(0, name="EMPTY")
-TILE_TREE_TOP_LEFT     = Tile(25, name="TILE_TREE_TOP_LEFT", matchers=[(Compass.EAST, one_of(26)), (Compass.SOUTH, one_of(40)), (Compass.SOUTH_EAST, one_of(41)), (Compass.NORTH_EAST, except_of(25))])
-TILE_TREE_TOP_RIGHT    = Tile(26, name="TILE_TREE_TOP_RIGHT", matchers=[(Compass.WEST, one_of(25)), (Compass.SOUTH, one_of(41)), (Compass.SOUTH_WEST, one_of(40))])
-TILE_TREE_BOTTOM_LEFT  = Tile(40, name="TILE_TREE_BOTTOM_LEFT", matchers=[(Compass.EAST, one_of(41)), (Compass.NORTH, one_of(25))])
-TILE_TREE_BOTTOM_RIGHT = Tile(41, name="TILE_TREE_BOTTOM_RIGHT", matchers=[(Compass.WEST, one_of(40)), (Compass.NORTH, one_of(26))])
-TILESET = [TILE_EMPTY, TILE_TREE_TOP_LEFT, TILE_TREE_TOP_RIGHT, TILE_TREE_BOTTOM_LEFT, TILE_TREE_BOTTOM_RIGHT]
+TILESET = [
+    TILE_EMPTY,
+    Tile(25, name="TILE_TREE_TOP_LEFT", matchers=[(Compass.EAST, one_of(26)), (Compass.SOUTH, one_of(40, 55)), (Compass.SOUTH_EAST, one_of(41, 56)), (Compass.NORTH_EAST, except_of(25, 55))]),
+    Tile(26, name="TILE_TREE_TOP_RIGHT", matchers=[(Compass.WEST, one_of(25)), (Compass.SOUTH, one_of(41, 56)), (Compass.SOUTH_WEST, one_of(40, 55))]),
+
+    Tile(55, name="TILE_TREE_MIDDLE_LEFT", matchers=[(Compass.EAST, one_of(56)), (Compass.NORTH, one_of(25)), (Compass.SOUTH, one_of(40, 55)), (Compass.SOUTH_EAST, except_of(0))]),
+    Tile(56, name="TILE_TREE_MIDDLE_RIGHT", matchers=[(Compass.WEST, one_of(55)), (Compass.NORTH, one_of(26)), (Compass.SOUTH, one_of(41, 56))]),
+
+    Tile(40, name="TILE_TREE_BOTTOM_LEFT", matchers=[(Compass.EAST, one_of(41)), (Compass.NORTH, one_of(25, 55))]),
+    Tile(41, name="TILE_TREE_BOTTOM_RIGHT", matchers=[(Compass.WEST, one_of(40)), (Compass.NORTH, one_of(26, 56))]),
+]
+
 
 
 def generate_map(width, height, tileset, tile_chooser=lambda p: p[0], clearance_map=None, clearance_tile=TILE_EMPTY):
@@ -81,20 +90,21 @@ def generate_map(width, height, tileset, tile_chooser=lambda p: p[0], clearance_
                 if clearance_map[x][y]:
                     map_grid[x][y] = clearance_tile
 
-    for x in range(width):
-        for y in range(height):
-            neighbours = [ a for _, _, a in connected_tiles(x, y, map_grid)]
-            possible_tiles = [ tile for tile in tileset if can_be_connected(tile, x, y, map_grid) ]
-            # if len(possible_tiles) == 0:
-            #     with open('/tmp/map_error.log', 'w') as f:
-            #         f.write(repr(export_map(map_grid)))
-            #     raise IndexError("No more possible tiles: " + repr(export_map(map_grid)))
+    try:
+        for x in range(width):
+            for y in range(height):
+                if not map_grid[x][y]:
+                    possible_tiles = [ tile for tile in tileset if can_be_connected(tile, x, y, map_grid) ]
+                    if len(possible_tiles) == 0:
+                        # with open('/tmp/map_error.log', 'w') as f:
+                        #     f.write(repr(export_map(map_grid)))
+                        raise IndexError("No more possible tiles: " + repr(export_map(map_grid)))
+                    else:
+                        choosen_tile = tile_chooser(possible_tiles)
+                        map_grid[x][y] = choosen_tile
 
-
-            choosen_tile = tile_chooser(possible_tiles)
-            map_grid[x][y] = choosen_tile
-
-
+    except:
+        print("ERROR!")
 
     return map_grid
 

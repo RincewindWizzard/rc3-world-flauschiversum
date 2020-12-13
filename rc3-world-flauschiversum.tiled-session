@@ -17,10 +17,10 @@
         },
         "forest/forest.json": {
             "scale": 0.75,
-            "selectedLayer": 5,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 1770,
-                "y": 819.9999999999999
+                "x": 1104.6666666666665,
+                "y": 1083.9999999999998
             }
         },
         "forest/forest.json#fantasy": {
