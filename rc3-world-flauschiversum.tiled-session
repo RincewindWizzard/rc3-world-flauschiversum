@@ -8,19 +8,22 @@
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1,
+            "scaleInDock": 2,
             "scaleInEditor": 3
         },
         "cija.json": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "forest/fantasy_tileset.json": {
+            "scaleInDock": 1
+        },
         "forest/forest.json": {
-            "scale": 2,
+            "scale": 0.25,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 399,
-                "y": 338
+                "x": 4800,
+                "y": 4798
             }
         },
         "forest/forest.json#fantasy": {
@@ -29,12 +32,23 @@
         "forest/forest.json#mapUtilities": {
             "scaleInDock": 1
         },
+        "forest/forest_manuell.json": {
+            "scale": 0.33,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 4351.515151515152,
+                "y": 3277.2727272727275
+            }
+        },
+        "forest/forest_manuell.json#fantasy": {
+            "scaleInDock": 1
+        },
         "magierdinge/magierdinge.json": {
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1012,
-                "y": 971
+                "x": 1237,
+                "y": 924
             }
         },
         "magierdinge/magierdinge.json#fantasy": {
@@ -53,6 +67,20 @@
         },
         "main.json#cija": {
             "scaleInDock": 1
+        },
+        "thronsaal/thronsaal.json": {
+            "scale": 3,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 148.16666666666666,
+                "y": 326.66666666666663
+            }
+        },
+        "thronsaal/thronsaal.json#fantasy": {
+            "scaleInDock": 1
+        },
+        "thronsaal/thronsaal.json#mapUtils": {
+            "scaleInDock": 1
         }
     },
     "map.fixedSize": false,
@@ -60,11 +88,15 @@
     "map.lastUsedFormat": "json",
     "map.width": 30,
     "openFiles": [
-        "magierdinge/magierdinge.json"
+        "magierdinge/magierdinge.json",
+        "forest/forest.json",
+        "forest/forest_manuell.json"
     ],
     "project": "rc3-world-flauschiversum.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "thronsaal/thronsaal.json",
+        "forest/forest_manuell.json",
         "forest/forest.json",
         "magierdinge/magierdinge.json",
         "main.json",
