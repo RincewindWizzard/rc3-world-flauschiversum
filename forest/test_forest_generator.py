@@ -128,6 +128,69 @@ class TileConstraintTest(unittest.TestCase):
 
         print(forest_pathways)
 
+    def test_change_season_summer(self):
+        replacements = {
+            25: 27,
+            26: 28,
+            55: 57,
+            56: 58,
+            70: 72,
+            71: 73,
+            40: 42,
+            41: 43
+        }
+
+        map_grid_foreground = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_foreground')
+        map_grid_background = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_background')
+
+        map_grid_foreground = [(replacements[x] if x in replacements else x) for x in map_grid_foreground]
+        map_grid_background = [(replacements[x] if x in replacements else x) for x in map_grid_background]
+
+        write_layer_into_tiled_json('forest.json', 'forest_summer_foreground', map_grid_foreground)
+        write_layer_into_tiled_json('forest.json', 'forest_summer_background', map_grid_background)
+
+    def test_change_season_winter(self):
+        replacements = {
+            25: 31,
+            26: 32,
+            55: 61,
+            56: 62,
+            70: 76,
+            71: 77,
+            40: 46,
+            41: 47
+        }
+
+        map_grid_foreground = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_foreground')
+        map_grid_background = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_background')
+
+        map_grid_foreground = [(replacements[x] if x in replacements else x) for x in map_grid_foreground]
+        map_grid_background = [(replacements[x] if x in replacements else x) for x in map_grid_background]
+
+        write_layer_into_tiled_json('forest.json', 'forest_winter_foreground', map_grid_foreground)
+        write_layer_into_tiled_json('forest.json', 'forest_winter_background', map_grid_background)
+
+    def test_change_season_autumn(self):
+        replacements = {
+            25: 29,
+            26: 30,
+            55: 59,
+            56: 60,
+            70: 74,
+            71: 75,
+            40: 44,
+            41: 45
+        }
+
+        map_grid_foreground = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_foreground')
+        map_grid_background = load_layer_from_tiled_json_raw('forest.json', 'forest_spring_background')
+
+        map_grid_foreground = [(replacements[x] if x in replacements else x) for x in map_grid_foreground]
+        map_grid_background = [(replacements[x] if x in replacements else x) for x in map_grid_background]
+
+        write_layer_into_tiled_json('forest.json', 'forest_autumn_foreground', map_grid_foreground)
+        write_layer_into_tiled_json('forest.json', 'forest_autumn_background', map_grid_background)
+
 
 
 if __name__ == '__main__':

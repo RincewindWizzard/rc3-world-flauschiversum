@@ -267,6 +267,23 @@ def load_layer_from_tiled_json(path, layername):
             return flip([[layer['data'][x + y * width] for x in range(width)] for y in range(height)])
 
 
+def load_layer_from_tiled_json_raw(path, layername):
+    doc = json.load(open(path, 'r'))
+    width = int(doc['width'])
+    height = int(doc['height'])
+    for layer in doc['layers']:
+        if layer['name'] == layername:
+            return layer['data']
+
+def write_layer_into_tiled_json(path, layername, tilelist):
+    doc = json.load(open(path, 'r'))
+    for layer in doc['layers']:
+        if layer['name'] == layername:
+            layer['data'] = tilelist
+
+    json.dump(doc, open(path, 'w'))
+
+
 def flip(matrix):
     return [[matrix[y][x] for y in range(len(matrix))] for x in range(len(matrix[0]))]
 
