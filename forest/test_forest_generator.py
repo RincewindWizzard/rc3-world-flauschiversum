@@ -1,6 +1,16 @@
 import unittest
 from forest.forest_generator import *
 import random
+from pprint import pprint
+
+
+def print_constraint_map(constraints):
+    constraint_map = [
+        [{tile.id for tile in cell} for cell in row]
+        for row in constraints
+    ]
+    pprint(constraint_map)
+
 
 
 class TileConstraintTest(unittest.TestCase):
@@ -18,6 +28,19 @@ class TileConstraintTest(unittest.TestCase):
     def test_except_of(self):
         self.assertTrue(except_of(1)(2))
         self.assertFalse(except_of(1)(1))
+
+    def test_constraint_inference(self):
+        tile_a = Tile(1, matchers=[(Compass.SOUTH, one_of(2))])
+        tile_b = Tile(2, matchers=[(Compass.EAST, one_of(3))])
+        tile_c = Tile(3)
+
+        tileset = {tile_a, tile_b, tile_c}
+
+        cmap = tile_a.constraint_map(tileset)
+
+        print_constraint_map(cmap)
+
+
 
     def test_map_generate_3_1(self):
         tile_1 = Tile(1, matchers=[(Compass.EAST, one_of(2))])
@@ -73,18 +96,26 @@ class TileConstraintTest(unittest.TestCase):
         print(exported)
 
     def test_generate_simple_forest(self):
-        width = 100
-        height = 100
+        width = 300
+        height = 300
         random.seed(0)
 
-        map_grid = generate_map(width, height, TILESET, tile_chooser=lambda p: random.choice(p) if len(p) > 0 else TILE_EMPTY)
+        weights = {
+            0: 3
+        }
+
+        def tile_chooser(possbile_tiles):
+            return random.choices(possbile_tiles, weights=[(weights[tile.id] if tile.id in weights else 1) for tile in possbile_tiles])[0]
+
+        map_grid = generate_map(width, height, TILESET, tile_chooser=tile_chooser)
         insert_into_tiled_json(map_grid, 'forest.json', 'forest_generated')
 
     def test_generate_simple_forest_with_pathways(self):
         width = 100
         height = 100
         random.seed(0)
-        tile_chooser = lambda p: random.choice(p) if len(p) > 0 else TILE_EMPTY
+
+        tile_chooser = lambda p: random.choices(p, weights=[(100 if tile.id == 0 else 1) for tile in p])
 
         forest_pathways = load_layer_from_tiled_json('forest.json', 'forest_pathway')
         map_grid = generate_map(width, height, TILESET, tile_chooser=tile_chooser, clearance_map=forest_pathways, clearance_tile=TILE_EMPTY)
