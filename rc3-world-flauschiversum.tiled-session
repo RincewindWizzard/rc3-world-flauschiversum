@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "magierdinge/magierdinge.json",
+    "activeFile": "flauschi-island/Flauschi_island.json",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Alle Dateien (*)",
@@ -17,11 +17,11 @@
             "scaleInEditor": 1
         },
         "flauschi-island/Flauschi_island.json": {
-            "scale": 0.3946458333333333,
+            "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1666.0507839307395,
-                "y": 2402.153829910785
+                "x": 336.33333333333337,
+                "y": 1784.6666666666665
             }
         },
         "flauschi-island/Flauschi_island.json#buddyterence": {
@@ -37,13 +37,14 @@
             "scaleInDock": 1
         },
         "forest/fantasy_tileset.json": {
-            "scaleInDock": 1
+            "scaleInDock": 2,
+            "scaleInEditor": 1
         },
         "forest/forest.json": {
             "scale": 0.25,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 4800,
+                "x": 4798,
                 "y": 4798
             }
         },
@@ -57,7 +58,7 @@
             "scale": 0.33,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 4351.515151515152,
+                "x": 4350,
                 "y": 3277.2727272727275
             }
         },
@@ -68,8 +69,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1237,
-                "y": 924
+                "x": 275.5,
+                "y": 1217
             }
         },
         "magierdinge/magierdinge.json#fantasy": {
@@ -93,12 +94,13 @@
             "scale": 3,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 173.83333333333331,
-                "y": 323.99999999999994
+                "x": 184.83333333333331,
+                "y": 314.33333333333337
             }
         },
         "thronsaal/thronsaal.json#fantasy": {
-            "scaleInDock": 1
+            "scaleInDock": 3,
+            "scaleInEditor": 4
         },
         "thronsaal/thronsaal.json#mapUtils": {
             "scaleInDock": 1
@@ -111,15 +113,20 @@
     "openFiles": [
         "magierdinge/magierdinge.json",
         "forest/forest.json",
-        "forest/forest_manuell.json"
+        "forest/forest_manuell.json",
+        "thronsaal/thronsaal.json",
+        "forest/fantasy_tileset.json",
+        "flauschi-island/Flauschi_island.json"
     ],
     "project": "rc3-world-flauschiversum.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "thronsaal/thronsaal.json",
-        "forest/forest_manuell.json",
-        "forest/forest.json",
         "magierdinge/magierdinge.json",
+        "forest/forest.json",
+        "forest/forest_manuell.json",
+        "thronsaal/thronsaal.json",
+        "forest/fantasy_tileset.json",
+        "flauschi-island/Flauschi_island.json",
         "main.json",
         "cija.json"
     ],
