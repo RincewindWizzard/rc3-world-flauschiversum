@@ -31,7 +31,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"..\/main.json#doorExit"
+                 "value":"..\/main.json#thronsaalAusgang"
                 }],
          "type":"tilelayer",
          "visible":true,
