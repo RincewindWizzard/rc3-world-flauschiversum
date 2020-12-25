@@ -150,7 +150,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"..\/main.json#start"
+                 "value":"..\/main.json#door_exit"
                 }],
          "type":"tilelayer",
          "visible":true,
